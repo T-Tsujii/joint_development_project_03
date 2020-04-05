@@ -1,0 +1,7 @@
+<h1>タスク作成</h1>
+<%= form_for @task, url: tasks_path, html: {method: :post} do |f| %>
+    <p>タイトる <%= f.text_field :title %></p>
+    <p>内容 <%= f.text_field :content %></p>
+    <input type="submit" value="送信">
+<% end %>
+<%= link_to "一覧画面へ", tasks_path %>
