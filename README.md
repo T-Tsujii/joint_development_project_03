@@ -2,7 +2,11 @@
 
 共同開発（基礎）へようこそ！
 
-共同開発（基礎）で作成するアプリのサンプルは[こちら](https://joint-development-project.herokuapp.com/users)です。
+## アプリのサンプル
+
+共同開発（基礎）で作成するアプリのサンプルはこちらです。
+
+- [https://joint-development-project.herokuapp.com/users](https://joint-development-project.herokuapp.com/users)
 
 ## 開発環境
 
@@ -67,7 +71,7 @@ git remote add origin リポジトリURL
 
 テキスト教材「resources を使ったCRUD処理の実装」を参考に，担当タスクの CRUD を実装して下さい。
 
-- この共同開発（基礎）では，コミットのタイミングを指定させていただきます。次のタイミングで計7回コミットを行って下さい。
+- この共同開発（基礎）では，コミットのタイミングを指定させていただきます。次のタイミングで***計7回***コミットを行って下さい。
   - プッシュは最後に1回行うだけでOKです
 
 1. `rails g model` コマンドで「テーブル」と「モデル」を作成し，マイグレーションを行う
@@ -75,8 +79,8 @@ git remote add origin リポジトリURL
 3. 新規投稿機能 `new, create` を実装（ストロングパラメータを利用）
 4. 一覧表示機能 `index` を実装（全てのカラムを表示しない点に注意して下さい）
 5. 詳細表示機能 `show` を実装
-6. 削除機能 `destroy` を実装
-7. 編集機能 `edit, update` を実装
+6. 編集機能 `edit, update` を実装
+7. 削除機能 `destroy` を実装
 
 - コミットメッセージは履歴が残ります。「変更内容がおおよそ分かる」ように書きましょう。日本語でOKです。
 
@@ -100,7 +104,7 @@ git push origin HEAD
 
 ## 4. コンフリクトの解消手順
 
-コンフリクトの解消は，**絶対にGitHubから行わないで下さい**。履歴が残りません。
+コンフリクトの解消は，**GitHubから行わないで下さい**。以下の手順で解消しましょう。
 
 - masterブランチに移動して最新をプル
 
@@ -119,7 +123,7 @@ git merge master
 
 - コンフリクトが起きたファイルをエディタで修正
   - `git status` を実行した際に， `both added: ファイル名`と書かれているファイルがコンフリクトしています
-  - `<<<<<<< HEAD`, `=======`, `>>>>>>> master`がコンフリクトを起こしている箇所です
+  - `<<<<<<<`, `=======`, `>>>>>>>`がコンフリクトを起こしている箇所です
   - 修正後に必ず動作確認を行って下さい
 
 - マージを完了させる
@@ -154,7 +158,8 @@ git pull
 
 余裕のある方は，次のリファクタリング・修正に挑戦していただいてもOKです。
 
-ユーザー関連のみ，[サンプル](https://joint-development-project-plus.herokuapp.com/users)を作成しました。
+- ユーザー関連のみ，サンプルを作成しました。
+  - [https://joint-development-project-plus.herokuapp.com/users](https://joint-development-project-plus.herokuapp.com/users)
 
 - `form_for` を 現在推奨されている `form_with` に変更し，`url`, `method` を書かない記法に変更
   - [Qiitaの参考記事](https://qiita.com/hmmrjn/items/24f3b8eade206ace17e2)
@@ -169,6 +174,7 @@ git pull
   - Bootstrap は gem で導入済みです。class を追加するだけで使用できます。
   - `<%= form.text_field :name, class: "form-control" %>`のように書くことでクラスを追加できます
   - [Bootstrap公式 Forms](https://getbootstrap.jp/docs/4.4/components/forms/)
+  - [Bootstrap公式 Tables](https://getbootstrap.jp/docs/4.4/content/tables/)
   - [Bootstrap公式 Cards](https://getbootstrap.jp/docs/4.4/components/card/)
   - [Bootstrap インプットグループ](http://www.tohoho-web.com/bootstrap/input_group.html)
 
