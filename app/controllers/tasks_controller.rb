@@ -1,31 +1,49 @@
 class TasksController < ApplicationController
+    before_action :set_task, only: [:show, :destroy, :edit, :update]
 
     def new
         @task = Task.new
     end
     
     def create
-        Task.create(task_parameter)
+        @task = Task.new(task_parameter)
+        if @task.save
+            flash[:success] = "タスクを登録しました。"
+            redirect_to tasks_path
+        else
+            flash.now[:danger] = "タスクの登録に失敗しました。"
+            render 'tasks/new'
+        end
     end
 
     def index
-        @tasks = Task.all
+        @tasks = Task.all.order(id: :asc)
     end
 
     def show 
-        @task = Task.find(params[:id])
     end
 
     def destroy
-        Task.find(params[:id]).destroy
+        if @task.destroy
+            flash[:success] = "タスクを削除しました。"
+            redirect_to tasks_path 
+        else
+            flash.now[:danger] = "タスクの削除に失敗しました。"
+            render 'tasks/index'
+        end
     end
 
     def edit
-        @task = Task.find(params[:id])
     end
 
     def update
-        Task.find(params[:id]).update(task_parameter)
+        if @task.update(task_parameter)
+            flash[:success] = "タスクを編集しました。"
+            redirect_to tasks_path 
+        else
+            flash.now[:danger] = "タスクの編集に失敗しました。"
+            render 'tasks/edit'
+        end
     end
 
     private
@@ -33,4 +51,9 @@ class TasksController < ApplicationController
     def task_parameter
         params.require(:task).permit(:title, :content)
     end
+
+    def set_task
+        @task = Task.find(params[:id])
+    end
+        
 end
