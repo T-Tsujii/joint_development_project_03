@@ -12,8 +12,7 @@ class TasksController < ApplicationController
             redirect_to tasks_path
         else
             flash.now[:danger] = "タスクの登録に失敗しました。"
-            render 'new'
-            # render :new
+            render :new
         end
     end
 
@@ -30,7 +29,7 @@ class TasksController < ApplicationController
             redirect_to tasks_path 
         else
             flash[:danger] = "タスクの削除に失敗しました。"
-            render 'tasks/index'
+            render :index
         end
     end
 
@@ -43,7 +42,7 @@ class TasksController < ApplicationController
             redirect_to tasks_path 
         else
             flash.now[:danger] = "タスクの編集に失敗しました。"
-            render 'tasks/edit'
+            render :edit
         end
     end
 
