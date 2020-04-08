@@ -1,5 +1,11 @@
-<h1>タスク詳細</h1>
-<p>名前： <%= @task.title %> </p>
-<p>内容： <%= @task.content %> </p>
-
-<%= link_to "一覧画面へ", tasks_path %>
+<div class="container text-center padding">
+    <h1>タスク詳細</h1>
+    <div class="card mx-auto" style="width: 18rem;">
+        <div class="card-header"><%= @task.title %></div>
+        <div class="card-body">
+            <p class="card-text"><%= @task.content %></p>
+        </div>
+    </div>
+    <hr>
+    <%= link_to "一覧画面へ", tasks_path, class:"btn btn-primary"%>
+</div>

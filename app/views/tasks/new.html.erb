@@ -1,7 +1,16 @@
-<h1>タスク作成</h1>
+<div class="container text-center padding">
+<h1 class=>タスク作成</h1>
 <%= form_for @task, url: tasks_path, html: {method: :post} do |f| %>
-    <p>タイトル <%= f.text_field :title %></p>
-    <p>内容 <%= f.text_field :content %></p>
-    <input type="submit" value="送信">
+    <div class="form-group row">
+        <label for="title" class="col-form-label col-sm-2">タイトル</label>
+        <%= f.text_field :title, class:"form-control col-sm-10" %>
+    </div>
+    <div class="form-group row">
+        <label for="content" class="col-form-label  col-sm-2">内容</label>
+        <%= f.text_area :content, class:"form-control col-sm-10" %>
+    </div>
+    <input type="submit" value=" 送信 " class="btn btn-primary">
 <% end %>
-<%= link_to "一覧画面へ", tasks_path %>
+<hr>
+<%= link_to "一覧画面へ", tasks_path, class:"btn btn-outline-primary" %>
+</div>
