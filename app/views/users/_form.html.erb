@@ -1,0 +1,17 @@
+<%= form_with model: @user, local: true do |f| %>
+<div class="form-group">
+  <div class="input-group-prepend">
+    <span class="input-group-text">氏名</span>
+    <input type="text" class="form-control" name="user[name]" id="user_name">
+  </div>
+</div>
+
+<div class="form-group">
+  <div class="input-group-prepend">
+    <span class="input-group-text">年齢</span>
+    <input type="text" class="form-control" name="user[age]" id="user_age">
+  </div>
+</div>
+
+<input type="submit" value="送信" class="btn btn-primary btn-block">
+<% end %>

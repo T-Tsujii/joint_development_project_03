@@ -1,18 +1,6 @@
-<%= form_with model: @user, local: true do |f| %>
-<h1>ユーザー 作成</h1>
-<form>
-  <div class="input-group-prepend">
-    <span class="input-group-text">氏名</span>
-    <%= f.text_field :name, class: "form-control" %>
-  </div>
-  <div class="inpout-group my-4">
-    <div class="input-group-prepend">
-      <span class="input-group-text">年齢</span>
-      <%= f.text_field :age, class: "form-control" %>
-    </div>
-    <div class="inpout-group my-4">
-      <input type="submit" value="送信" class="btn btn-primary btn-block">
-    </form>
-    <hr class = "my-4">
-    <a href="/users" class="btn btn-info btn-block">一覧画面へ</a>
-    <% end %>
+<h1>ユーザー作成</h1>
+
+<%= render "form" %>
+
+<hr class="my-4">
+<%= link_to "一覧画面へ", users_path, class: "btn btn-info btn-block" %>
