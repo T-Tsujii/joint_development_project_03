@@ -1,14 +1,14 @@
 <%= form_with model: @user, local: true do |f| %>
 <div class="form-group">
   <div class="input-group-prepend">
-    <%= f.label :name, "氏名" %>
+    <span class="input-group-text">氏名</span>
     <%= f.text_field :name, class:"form-control" %>
   </div>
 </div>
 
 <div class="form-group">
   <div class="input-group-prepend">
-    <%= f.label :age, "年齢" %>
+    <span class="input-group-text">年齢</span>
     <%= f.text_field :age, class:"form-control" %>
   </div>
 </div>
