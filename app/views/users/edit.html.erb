@@ -1,6 +1,6 @@
-<%= form_for @user, url: user_path(@user), html: { method: :patch } do |f| %>
-  <p>ユーザー編集</p>
-  <p>氏名：<%= f.text_field :name %></p>
-  <p>年齢：<%= f.text_field :age %></p>
-  <input type="submit" value="送信">
-<% end %>
+<h1>ユーザー編集</h1>
+
+<%= render "form" %>
+
+<hr class="my-4">
+<%= link_to "一覧画面へ", users_path, class: "btn btn-info btn-block" %>
