@@ -1,15 +1,15 @@
 <%= form_with model: @user, local: true do |f| %>
 <div class="form-group">
   <div class="input-group-prepend">
-    <span class="input-group-text">氏名</span>
-    <input type="text" class="form-control" name="user[name]" id="user_name">
+    <%= f.label :name, "氏名" %>
+    <%= f.text_field :name, class:"form-control" %>
   </div>
 </div>
 
 <div class="form-group">
   <div class="input-group-prepend">
-    <span class="input-group-text">年齢</span>
-    <input type="text" class="form-control" name="user[age]" id="user_age">
+    <%= f.label :age, "年齢" %>
+    <%= f.text_field :age, class:"form-control" %>
   </div>
 </div>
 
